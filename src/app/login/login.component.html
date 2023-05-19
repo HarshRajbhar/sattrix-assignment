@@ -4,14 +4,14 @@
   <!-- Username -->
   <div class="box">
     <h1>Username</h1>
-    <input type="text" class="Input" />
+    <input type="text" class="Input" [(ngModel)]="login.username" />
   </div>
   <!-- Password -->
   <div class="box">
     <h1>Password</h1>
-    <input type="text" class="Input" />
+    <input type="text" class="Input" [(ngModel)]="login.password" />
   </div>
 
   <!-- Login -->
-  <button class="login-btn mt-5" role="button">Login</button>
+  <button class="login-btn mt-5" role="button" (click)="user_login()">Login</button>
 </section>

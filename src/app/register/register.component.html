@@ -4,24 +4,26 @@
   <!-- Username -->
   <div class="box">
     <h1>Username</h1>
-    <input type="text" class="Input" />
+    <input type="text" class="Input" [(ngModel)]="reg_User.username" />
   </div>
   <!-- Email -->
   <div class="box">
     <h1>Email</h1>
-    <input type="text" class="Input" />
+    <input type="text" class="Input" [(ngModel)]="reg_User.email" />
   </div>
   <!-- Password -->
   <div class="box">
     <h1>Password</h1>
-    <input type="text" class="Input" />
+    <input type="text" class="Input" [(ngModel)]="reg_User.password" />
   </div>
   <!-- Confirm Password -->
   <div class="box">
     <h1>Confirm Password</h1>
-    <input type="text" class="Input" />
+    <input type="text" class="Input" [(ngModel)]="reg_User.confirm_password" />
   </div>
 
   <!-- Login -->
-  <button class="login-btn mt-5" role="button">Register</button>
+  <button class="login-btn mt-5" role="button" (click)="register()">
+    Register
+  </button>
 </section>
