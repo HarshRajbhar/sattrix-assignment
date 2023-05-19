@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { SharedService } from '../services/shared.service';
 
 interface table {
   name: string;
@@ -24,6 +25,7 @@ export class RegisterUserComponent {
   };
 
   User_List_data: table[] = [];
+  constructor(private shared: SharedService) {}
 
   submit() {
     if (
@@ -33,13 +35,14 @@ export class RegisterUserComponent {
       this.reg_User.city.trim() !== ''
     ) {
       console.log(this.reg_User);
-      this.User_List_data.push({
-        name: this.reg_User.name,
-        email: this.reg_User.email,
-        phone: this.reg_User.phone,
-        city: this.reg_User.city,
-      });
-      sessionStorage.setItem('User_List', JSON.stringify(this.User_List_data));
+      // this.User_List_data.push({
+      //   name: this.reg_User.name,
+      //   email: this.reg_User.email,
+      //   phone: this.reg_User.phone,
+      //   city: this.reg_User.city,
+      // });
+      // sessionStorage.setItem('User_List',);
+      this.shared.AddUserToList(JSON.parse(JSON.stringify(this.reg_User)));
       Swal.fire('Success', 'User Registered Successfully', 'success');
       this.reg_User.name = '';
       this.reg_User.email = '';
