@@ -8,7 +8,7 @@ const routes: Routes = [
     component: LandingPageComponent,
     children: [
       {
-        path: '',
+        path: 'login',
         loadComponent: () =>
           import('./login/login.component').then((a) => a.LoginComponent),
       },
@@ -18,6 +18,11 @@ const routes: Routes = [
           import('./register/register.component').then(
             (a) => a.RegisterComponent
           ),
+      },
+      {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full',
       },
     ],
   },
@@ -32,16 +37,21 @@ const routes: Routes = [
       {
         path: 'Register-user',
         loadComponent: () =>
-          import('./dashboard-page/dashboard-page.component').then(
-            (a) => a.DashboardPageComponent
+          import('./register-user/register-user.component').then(
+            (a) => a.RegisterUserComponent
           ),
       },
       {
         path: 'user-list',
         loadComponent: () =>
-          import('./dashboard-page/dashboard-page.component').then(
-            (a) => a.DashboardPageComponent
+          import('./user-list/user-list.component').then(
+            (a) => a.UserListComponent
           ),
+      },
+      {
+        path: '',
+        redirectTo: 'Register-user',
+        pathMatch: 'full',
       },
     ],
   },
