@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
+
 interface table {
   name: string;
   city: string;
@@ -20,6 +22,9 @@ export class RegisterUserComponent {
     phone: '',
     city: '',
   };
+
+  User_List_data: table[] = [];
+
   submit() {
     if (
       this.reg_User.name.trim() !== '' &&
@@ -28,6 +33,18 @@ export class RegisterUserComponent {
       this.reg_User.city.trim() !== ''
     ) {
       console.log(this.reg_User);
+      this.User_List_data.push({
+        name: this.reg_User.name,
+        email: this.reg_User.email,
+        phone: this.reg_User.phone,
+        city: this.reg_User.city,
+      });
+      sessionStorage.setItem('User_List', JSON.stringify(this.User_List_data));
+      Swal.fire('Success', 'User Registered Successfully', 'success');
+      this.reg_User.name = '';
+      this.reg_User.email = '';
+      this.reg_User.phone = '';
+      this.reg_User.city = '';
     }
   }
 }
