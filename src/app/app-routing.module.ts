@@ -21,6 +21,13 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./dashboard-page/dashboard-page.component').then(
+        (a) => a.DashboardPageComponent
+      ),
+  },
 ];
 
 @NgModule({
