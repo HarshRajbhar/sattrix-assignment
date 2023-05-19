@@ -27,6 +27,23 @@ const routes: Routes = [
       import('./dashboard-page/dashboard-page.component').then(
         (a) => a.DashboardPageComponent
       ),
+
+    children: [
+      {
+        path: 'Register-user',
+        loadComponent: () =>
+          import('./dashboard-page/dashboard-page.component').then(
+            (a) => a.DashboardPageComponent
+          ),
+      },
+      {
+        path: 'user-list',
+        loadComponent: () =>
+          import('./dashboard-page/dashboard-page.component').then(
+            (a) => a.DashboardPageComponent
+          ),
+      },
+    ],
   },
 ];
 
