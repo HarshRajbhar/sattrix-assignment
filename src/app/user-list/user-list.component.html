@@ -1,1 +1,37 @@
-<p>user-list works!</p>
+<table class="w-full h-auto border overflow-auto">
+  <thead class="Grid">
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>City</th>
+    <th>Actions</th>
+  </thead>
+  <tbody class="">
+    <tr
+      class="w-full Grid"
+      style="border-top: 1px solid black"
+      *ngFor="let data of user_list; let i = index"
+    >
+      <td>{{ data.name }}</td>
+      <td>{{ data.email }}</td>
+      <td>{{ data.phone }}</td>
+      <td>{{ data.city }}</td>
+      <td class="w-full flex justify-center items-center">
+        <!-- edit -->
+        <img
+          class="w-5 cursor-pointer h-5 mr-2"
+          src="/assets/svgs/pencil-sharp.svg"
+          alt="/assets/svgs/pencil-sharp.svg"
+          (click)="edit(i)"
+        />
+        <!-- Delete -->
+        <img
+          (click)="dlt(i)"
+          class="w-5 cursor-pointer h-5"
+          src="/assets/svgs/trash-outline.svg"
+          alt="/assets/svgs/trash-outline.svg"
+        />
+      </td>
+    </tr>
+  </tbody>
+</table>
