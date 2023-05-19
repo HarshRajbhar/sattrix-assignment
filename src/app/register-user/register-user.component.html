@@ -1,25 +1,25 @@
 <section class="w-full h-full mt-10 flex flex-col items-center">
   <!-- Username -->
   <div class="box">
-    <h1>Username</h1>
-    <input type="text" class="Input" />
+    <h1>Name</h1>
+    <input type="text" class="Input" [(ngModel)]="reg_User.name" />
   </div>
   <!-- Email -->
   <div class="box">
     <h1>Email</h1>
-    <input type="text" class="Input" />
+    <input type="text" class="Input" [(ngModel)]="reg_User.email" />
   </div>
   <!-- Phone -->
   <div class="box">
     <h1>Phone</h1>
-    <input type="text" class="Input" />
+    <input type="text" class="Input" [(ngModel)]="reg_User.phone" />
   </div>
   <!-- City -->
   <div class="box">
     <h1>City</h1>
-    <input type="text" class="Input" />
+    <input type="text" class="Input" [(ngModel)]="reg_User.city" />
   </div>
 
   <!-- Login -->
-  <button class="btn mt-5" role="button">Submit</button>
+  <button class="btn mt-5" role="button" (click)="submit()">Submit</button>
 </section>
